@@ -1,0 +1,172 @@
+/* Сброс (reset) основных отступов, не обязательно, но полезно */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Общие стили для сайта */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Контейнер, чтобы центрировать содержимое и задать максимальную ширину */
+.container {
+    max-width: 800px; /* Ширина центральной колонки */
+    margin: 0 auto; /* Выравниваем по центру */
+    padding: 0 15px;
+}
+
+/* Шапка (фиксированное положение для заголовка) */
+header {
+    color: dodgerblue;
+    position: fixed; /* Фиксируем заголовок */
+    top: 0; /* Position it at the top of the screen */
+    left: 0;
+    right: 0;
+    background-color: lightblue;
+    padding: 20px 0; /* Initial padding */
+    margin: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Основная часть (лента) */
+.site-main {
+    padding: 20px 0;
+    margin-top: 80px; /* Adjusted to accommodate larger header initially */
+}
+
+/* Шапка */
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0; /* Initial padding (larger header) */
+    transition: padding 0.3s ease; /* Smooth transition for padding */
+}
+
+    .site-header .site-title {
+        font-size: 24px;
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+.search-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    .search-block input {
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-block button {
+        padding: 6px 12px;
+        margin-left: 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+
+/* Hide the title when scrolling */
+.site-title.hide {
+    display: none;
+}
+
+/* Уменьшаем размер заголовка и шапки при прокрутке */
+.site-header.header-small {
+    padding: 10px 0; /* Smaller padding (decreased header size) */
+}
+
+    .site-header.header-small .site-title {
+        font-size: 16px; /* Optionally reduce the title size as well */
+    }
+
+/* Ensure logo is positioned and adjust on scroll */
+.site-logo {
+    position: relative; /* Or absolute, if needed */
+    top: 7px; /* Default position */
+    width: auto;
+    height: 30px; /* Ensure height is set */
+}
+
+    /* When scrolling, move the logo 5px down */
+.site-logo.small-logo {
+    top: 10px; /* Adjust the position 5px down */
+    width: auto; /* Adjust size */
+    height: 30px;
+}
+
+
+
+
+/* Каждый пост */
+.post {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column; /* столбиком */
+    overflow: hidden;
+    width: 60%;
+    /* Центрируем, но добавим небольшой отступ слева 
+     за счёт асимметричного margin */
+    margin: 0 auto 20px;
+    margin-left: 40px; /* дополнительно сместим вправо */
+}
+
+/* Картинка в посте */
+.post-image {
+    width: 100%;
+    height: auto; /* чтобы сохранять пропорции */
+    object-fit: cover; /* при необходимости обрезать картинку по блоку */
+}
+
+/* Контент поста: название, описание, ссылки */
+.post-content {
+    padding: 15px;
+    flex: 1; /* чтобы занимало всё доступное место, если картинка меньше */
+}
+
+.post-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.post-description {
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.post-links {
+    margin-top: auto; /* чтобы ссылки «прилипали» к низу, если хочется */
+}
+
+.post-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .post-link:hover {
+        text-decoration: underline;
+    }
+
+/* Подвал */
+.site-footer {
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+}
